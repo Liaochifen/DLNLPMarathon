@@ -1,7 +1,7 @@
-import tqdm
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import List
+from tqdm.notebook import tqdm
 
 def remove_duplicate(params, grads):
 
@@ -147,7 +147,7 @@ class Trainer:
         total_loss = 0
         loss_count = 0
 
-        for epoch in tqdm.tqdm(range(max_epoch)):
+        for epoch in tqdm(range(max_epoch)):
             # shuffling
             idx = np.random.permutation(np.arange(data_size))
             x = x[idx]
